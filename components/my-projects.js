@@ -4,29 +4,30 @@ class MyProjects extends HTMLElement {
       <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-5xl font-bold mb-4">
-            <span class="gradient-text">Featured</span> 
+            <span class="gradient-text">Featured</span>
             <span class="glow">Projects</span>
           </h2>
           <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
         </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project 1 -->
+          <!-- Project 1: CameraGameSetup -->
           <div class="project-card">
             <div class="project-inner card h-full rounded-xl overflow-hidden">
               <div class="relative">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
-                     alt="Project 1" 
-                     class="w-full h-48 object-cover">
+                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1770&q=80"
+                    alt="Camera Game Simulation"
+                    class="w-full h-48 object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-4 left-4">
-                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">React</span>
-                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Node.js</span>
+                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Three.js</span>
+                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Custom Engine</span>
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                <h3 class="text-xl font-bold mb-2">Camera Game Simulation</h3>
                 <p class="text-gray-400 text-sm mb-4">
-                  A full-featured e-commerce platform with payment integration, product management, and user authentication.
+                  A 3D simulation for exploring city-building mechanics, camera controls, and resource management using WebGL and custom shaders.
                 </p>
                 <div class="flex space-x-3">
                   <a href="#" class="text-primary hover:text-secondary">
@@ -39,23 +40,24 @@ class MyProjects extends HTMLElement {
               </div>
             </div>
           </div>
-          <!-- Project 2 -->
+
+          <!-- Project 2: ScienceMachine 95 -->
           <div class="project-card">
             <div class="project-inner card h-full rounded-xl overflow-hidden">
               <div class="relative">
-                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80" 
-                     alt="Project 2" 
-                     class="w-full h-48 object-cover">
+                <img src="https://images.unsplash.com/photo-1527443224154-65fce13e8b2e?auto=format&fit=crop&w=1770&q=80"
+                    alt="Data Science Game"
+                    class="w-full h-48 object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-4 left-4">
-                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Vue.js</span>
-                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Firebase</span>
+                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">WebComponents</span>
+                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Gamification</span>
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                <h3 class="text-xl font-bold mb-2">ScienceMachine 95</h3>
                 <p class="text-gray-400 text-sm mb-4">
-                  A collaborative task management application with real-time updates, drag-and-drop interface, and team features.
+                  A retro OS-themed data science game with XP, coins, Clippy-style AI guidance, and drag-and-drop logic blocks.
                 </p>
                 <div class="flex space-x-3">
                   <a href="#" class="text-primary hover:text-secondary">
@@ -68,23 +70,24 @@ class MyProjects extends HTMLElement {
               </div>
             </div>
           </div>
-          <!-- Project 3 -->
+
+          <!-- Project 3: Super Auto Duel -->
           <div class="project-card">
             <div class="project-inner card h-full rounded-xl overflow-hidden">
               <div class="relative">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
-                     alt="Project 3" 
-                     class="w-full h-48 object-cover">
+                <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437b1?auto=format&fit=crop&w=1770&q=80"
+                    alt="Super Auto Duel"
+                    class="w-full h-48 object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-4 left-4">
-                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Next.js</span>
-                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">GraphQL</span>
+                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Unity</span>
+                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Netcode</span>
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Portfolio CMS</h3>
+                <h3 class="text-xl font-bold mb-2">Super Auto Duel</h3>
                 <p class="text-gray-400 text-sm mb-4">
-                  A content management system for creatives to showcase their work with customizable templates and analytics.
+                  A physics-based capsule battler inspired by Super Auto Pets. Multiplayer-ready, stat-driven, and totally chaotic.
                 </p>
                 <div class="flex space-x-3">
                   <a href="#" class="text-primary hover:text-secondary">
@@ -99,6 +102,7 @@ class MyProjects extends HTMLElement {
           </div>
         </div>
       </section>
+
     `;
   }
 }

@@ -1,11 +1,11 @@
 class MyHero extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="home" class="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="absolute top-0 right-0 w-1/2 h-full -z-10">
           <div id="3d-container" class="w-full h-full"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
           <div>
             <h1 class="text-4xl md:text-6xl font-bold mb-4">
               <span class="gradient-text">Hello, I'm</span> 
