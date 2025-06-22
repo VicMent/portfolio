@@ -7,13 +7,13 @@ class MyFooter extends HTMLElement {
             &copy; ${new Date().getFullYear()} Vic &mdash; Full Stack Developer. All rights reserved.
           </div>
           <div class="flex space-x-4 justify-center">
-            <a href="mailto:your.email@example.com" class="text-primary hover:text-secondary transition">
+            <a href="mailto:vicmenten@gmail.com" class="text-primary hover:text-secondary transition">
               <i class="fas fa-envelope text-lg"></i>
             </a>
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="text-primary hover:text-secondary transition">
+            <a href="https://www.linkedin.com/in/vicmenten/" target="_blank" rel="noopener" class="text-primary hover:text-secondary transition">
               <i class="fab fa-linkedin text-lg"></i>
             </a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="text-primary hover:text-secondary transition">
+            <a href="https://github.com/VicMent" target="_blank" rel="noopener" class="text-primary hover:text-secondary transition">
               <i class="fab fa-github text-lg"></i>
             </a>
           </div>

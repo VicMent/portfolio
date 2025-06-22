@@ -41,60 +41,54 @@ class MyProjects extends HTMLElement {
             </div>
           </div>
 
-          <!-- Project 2: ScienceMachine 95 -->
+          <!-- Project 2: STE(A)M Power Web Game -->
           <div class="project-card">
             <div class="project-inner card h-full rounded-xl overflow-hidden">
               <div class="relative">
-                <img src="https://images.unsplash.com/photo-1527443224154-65fce13e8b2e?auto=format&fit=crop&w=1770&q=80"
-                    alt="Data Science Game"
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1770&q=80"
+                    alt="STE(A)M Power Web Game"
                     class="w-full h-48 object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-4 left-4">
-                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">WebComponents</span>
-                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Gamification</span>
+                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Web Game</span>
+                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Workshops</span>
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">ScienceMachine 95</h3>
+                <h3 class="text-xl font-bold mb-2">STE(A)M Power Web Game</h3>
                 <p class="text-gray-400 text-sm mb-4">
-                  A retro OS-themed data science game with XP, coins, Clippy-style AI guidance, and drag-and-drop logic blocks.
+                  Developed for <a href="https://research-expertise.ucll.be/nl/dienstverlening/items/steam-workshops-voor-je-leerlingen" target="_blank" class="underline text-primary">De Techniek- en WetenschapsAcademie (TWA)</a>, this interactive web game is used in workshops to introduce children and teens (ages 4–18) to STE(A)M concepts. The game encourages curiosity and hands-on discovery through playful challenges in programming, robotics, science, and technology.
                 </p>
                 <div class="flex space-x-3">
-                  <a href="#" class="text-primary hover:text-secondary">
+                  <a href="https://research-expertise.ucll.be/nl/dienstverlening/items/steam-workshops-voor-je-leerlingen" class="text-primary hover:text-secondary" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
-                  </a>
-                  <a href="#" class="text-primary hover:text-secondary">
-                    <i class="fab fa-github"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Project 3: Super Auto Duel -->
+          <!-- Project 3: XPLab Internship -->
           <div class="project-card">
             <div class="project-inner card h-full rounded-xl overflow-hidden">
               <div class="relative">
-                <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437b1?auto=format&fit=crop&w=1770&q=80"
-                    alt="Super Auto Duel"
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1770&q=80"
+                    alt="XPLab Internship"
                     class="w-full h-48 object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-4 left-4">
-                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Unity</span>
-                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Netcode</span>
+                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Full Stack</span>
+                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Education Game</span>
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Super Auto Duel</h3>
+                <h3 class="text-xl font-bold mb-2">Internship at XPLab</h3>
                 <p class="text-gray-400 text-sm mb-4">
-                  A physics-based capsule battler inspired by Super Auto Pets. Multiplayer-ready, stat-driven, and totally chaotic.
+                  As a full stack developer at <a href="https://xplab.be/" target="_blank" class="underline text-primary">XPLab</a>, I contributed to the development of an educational game, working across both frontend and backend to deliver engaging learning experiences.
                 </p>
                 <div class="flex space-x-3">
-                  <a href="#" class="text-primary hover:text-secondary">
+                  <a href="https://xplab.be/" class="text-primary hover:text-secondary" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
-                  </a>
-                  <a href="#" class="text-primary hover:text-secondary">
-                    <i class="fab fa-github"></i>
                   </a>
                 </div>
               </div>

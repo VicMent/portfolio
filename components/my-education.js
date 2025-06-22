@@ -30,23 +30,30 @@ class MyEducation extends HTMLElement {
                 <span>Collaborating in international projects</span>
                 </div>
             </div>
-            <a href="#" class="inline-flex items-center text-primary font-medium">
-                View Diploma <i class="fas fa-external-link-alt ml-2"></i>
-            </a>
+            <div class="flex flex-col">
+                <a href="#" class="inline-flex items-center text-primary font-medium">
+                    View Diploma <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+                <a href="https://www.ucll.be/en/appliedcomputerscience" class="inline-flex items-center text-primary font-medium">
+                    UCLL Website <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            </div>
             </div>
 
             <div class="relative">
             <div class="card p-1 rounded-2xl">
                 <div class="bg-gray-900 rounded-xl p-4 flex flex-col items-center">
                 <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-4 w-full">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80"
-                        alt="Graduation cap"
-                        class="w-full h-full object-cover rounded-lg">
+                    <a href="https://www.ucll.be/en/appliedcomputerscience" target="_blank" rel="noopener">
+                      <img src="assets/ucll.jpg"
+                          alt="Graduation cap"
+                          class="w-full h-full object-cover rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105">
+                    </a>
                 </div>
                 <div class="flex flex-col items-center">
                     <h3 class="text-lg font-semibold mb-1 text-center">Bachelor of Applied Computer Science</h3>
                     <span class="text-sm text-gray-400 mb-1 text-center">Digital Experience Track</span>
-                    <span class="text-xs text-gray-400 text-center">UCLL, Heverlee &nbsp;•&nbsp; Graduation: [Year]</span>
+                    <span class="text-xs text-gray-400 text-center">UCLL, Heverlee &nbsp;•&nbsp; Graduation: 2025</span>
                 </div>
                 </div>
             </div>

@@ -13,7 +13,7 @@ class MyContact extends HTMLElement {
           </p>
         </div>
         <div class="flex flex-col md:flex-row justify-center items-center gap-12">
-          <form class="w-full max-w-lg rounded-2xl p-8 shadow-2xl border border-gray-800 flex flex-col items-center bg-gradient-to-br from-darker via-dark to-gray-900">
+          <form class="w-full max-w-lg rounded-2xl p-8 shadow-2xl border border-gray-800 flex flex-col items-center bg-[var(--dark)]">
             <div class="mb-6 w-full">
               <label for="name" class="block mb-2 font-semibold text-center">Name</label>
               <input type="text" id="name" name="name" class="contact-input w-full px-4 py-3 rounded-lg text-white text-center" required>
@@ -57,6 +57,22 @@ class MyContact extends HTMLElement {
         </div>
       </section>
     `;
+
+    // Add form submission handler
+    const form = this.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.querySelector('[name="name"]').value;
+        const email = form.querySelector('[name="email"]').value;
+        const message = form.querySelector('[name="message"]').value;
+
+        // Construct mailto link
+        const subject = encodeURIComponent(`Contact from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+        window.location.href = `mailto:vicmenten@gmail.com?subject=${subject}&body=${body}`;
+      });
+    }
   }
 }
 customElements.define('my-contact', MyContact);

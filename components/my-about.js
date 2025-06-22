@@ -9,17 +9,19 @@ class MyAbout extends HTMLElement {
           </h2>
           <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div class="relative">
-            <div class="card p-1 rounded-2xl">
-              <div class="bg-gray-900 rounded-xl p-4">
-                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
-                       alt="Coding" 
-                       class="w-full h-full object-cover rounded-lg">
+        <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-36 items-center">
+          <div class="relative max-w-xs w-full mx-auto md:mx-0">
+            <div class="absolute top-2 left-1/2 -translate-x-1/2 z-20">
+              <div class="group relative">
+                <span class="bg-black/70 text-xs text-white px-3 py-1 rounded shadow cursor-pointer select-none ">
+                  AI generated*
+                </span>
+                <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-black/90 text-white text-xs rounded p-3 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30">
+                  This marble bust was created using AI. First a photo was transformed into a marble statue image using AI, then that image was converted into a 3D model with another AI tool.
                 </div>
               </div>
             </div>
+            <marble-viewer class="w-full h-auto block aspect-square rounded-lg"></marble-viewer>
             <div class="absolute -z-10 -top-10 -left-10 w-64 h-64 rounded-full bg-primary bg-opacity-10 blur-3xl"></div>
           </div>
           <div>
@@ -30,7 +32,7 @@ class MyAbout extends HTMLElement {
             </p>
             <p class="text-gray-400 mb-8">
               I specialize in JavaScript & Python frameworks, with experience in React, Unity, and much more.  
-              My approach blends technical depth with intuitive design to build systems that are not just usable, but fun.
+              My approach blends technical depth with intuitive design to build systems that are not just usable, but fun. I’m always eager to learn new things and explore fresh ideas.
             </p>
             <div class="grid grid-cols-2 gap-4 mb-8">
               <div class="flex items-center">
@@ -55,7 +57,7 @@ class MyAbout extends HTMLElement {
                 <div class="mr-3 text-primary">
                   <i class="fas fa-check-circle"></i>
                 </div>
-                <span>Playful Interfaces</span>
+                <span>Love to Learn</span>
               </div>
             </div>
             <a href="#" class="inline-flex items-center text-primary font-medium">

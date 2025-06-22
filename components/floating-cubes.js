@@ -14,7 +14,7 @@ class FloatingCubes extends HTMLElement {
       floatRangeMax: 20,
       floatSpeedMin: 0.2,
       floatSpeedMax: 0.7,
-      opacity: 0.4,
+      opacity: 0.7,
       zIndex: -1
     };
   }

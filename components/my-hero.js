@@ -23,8 +23,8 @@ class MyHero extends HTMLElement {
           </div>
           <div class="relative flex justify-center">
             <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary border-opacity-30 pulse">
-              <img src="assets/1.png" alt="Developer" class="w-full h-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+              <img src="assets/2.png" alt="Developer" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
             </div>
             <div class="absolute -bottom-5 -left-5 w-32 h-32 rounded-full bg-primary bg-opacity-10 blur-xl"></div>
             <div class="absolute -top-5 -right-5 w-32 h-32 rounded-full bg-secondary bg-opacity-10 blur-xl"></div>
