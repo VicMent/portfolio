@@ -99,8 +99,220 @@ class MySkills extends HTMLElement {
             </div>
           </div>
         </div>
+        <!-- Expandable Arrow -->
+        <div id="extra-skills" class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4 hidden">
+          <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-html5 text-orange-400 text-xl"></i>
+            </div>
+            <span>HTML</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              HTML5 & Markup
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-css3-alt text-blue-400 text-xl"></i>
+            </div>
+            <span>CSS / SASS</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Styling & Preprocessors
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/PHP" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-php text-indigo-400 text-xl"></i>
+            </div>
+            <span>PHP</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Backend Scripting
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Vue.js" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-vuejs text-green-400 text-xl"></i>
+            </div>
+            <span>Vue.js</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Frontend Framework
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Android_(operating_system)" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-android text-green-500 text-xl"></i>
+            </div>
+            <span>Android</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Mobile Development
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Git" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-git-alt text-red-400 text-xl"></i>
+            </div>
+            <span>Git</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Version Control
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/GitHub" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-github text-gray-300 text-xl"></i>
+            </div>
+            <span>GitHub</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Code Hosting
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Linux" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-linux text-gray-200 text-xl"></i>
+            </div>
+            <span>Linux</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Open Source OS
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-python text-yellow-400 text-xl"></i>
+            </div>
+            <span>Python</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Scripting & Data
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Figma_(software)" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fab fa-figma text-pink-400 text-xl"></i>
+            </div>
+            <span>Figma</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              UI/UX Design Tool
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Microsoft_Azure" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-cloud text-blue-400 text-xl"></i>
+            </div>
+            <span>Azure</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Cloud Platform
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-docker text-blue-300 text-xl"></i>
+            </div>
+            <span>Docker</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Containers
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/CI/CD" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-cogs text-green-400 text-xl"></i>
+            </div>
+            <span>CI/CD</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Automation & Pipelines
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/ASP.NET" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-code text-yellow-400 text-xl"></i>
+            </div>
+            <span>.NET / ASP.NET</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Microsoft Stack
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Spring_Framework" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-leaf text-green-400 text-xl"></i>
+            </div>
+            <span>Spring / Spring Boot</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Java Frameworks
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-vial text-purple-400 text-xl"></i>
+            </div>
+            <span>Unit Testing / TDD</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Quality Assurance
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Entity_Framework" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-cubes text-blue-400 text-xl"></i>
+            </div>
+            <span>Entity Framework</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              ORM for .NET
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Express.js" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-network-wired text-pink-400 text-xl"></i>
+            </div>
+            <span>APIs / Express.js</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              API Development
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Scrum_(software_development)" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-users text-blue-400 text-xl"></i>
+            </div>
+            <span>Scrum</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Agile Methodology
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Backend" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-laptop text-gray-400 text-xl"></i>
+            </div>
+            <span>Back-end Development</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Server-side Logic
+            </span>
+          </a>
+          <a href="https://en.wikipedia.org/wiki/Web_development" target="_blank" rel="noopener" tabindex="-1" class="skill-pill px-4 py-2 rounded-full flex items-center hover:bg-primary/20 transition group relative">
+            <div class="w-8 h-8 mr-3 flex items-center justify-center">
+              <i class="fas fa-globe text-green-400 text-xl"></i>
+            </div>
+            <span>Web Development</span>
+            <span class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 bg-black/90 text-white text-xs rounded p-1 shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-30 text-center">
+              Full Stack
+            </span>
+          </a>
+        </div>
+        <button id="expand-skills-btn" type="button" class="w-full flex items-center justify-center mt-4 text-primary hover:text-secondary transition focus:outline-none glow expand" aria-expanded="false">
+          <span class="mr-2 font-semibold">Show more skills</span>
+          <svg id="expand-arrow" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
       </section>
     `;
+
+    // Expand/collapse logic (place this AFTER setting innerHTML)
+    const btn = this.querySelector('#expand-skills-btn');
+    const extra = this.querySelector('#extra-skills');
+    const arrow = this.querySelector('#expand-arrow');
+    if (btn && extra && arrow) {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        extra.classList.toggle('hidden');
+        arrow.style.transform = expanded ? '' : 'rotate(180deg)';
+        btn.querySelector('span').textContent = expanded ? 'Show more skills' : 'Show fewer skills';
+      });
+    }
   }
 }
 customElements.define('my-skills', MySkills);

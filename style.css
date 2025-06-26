@@ -208,6 +208,15 @@
             width: 2px;
             background: rgba(255, 255, 255, 0.1);
         }
+
+        .expand {
+            transition: all 0.3s ease;
+            transform: scale(1.2);
+        }
+        .expand:hover {
+            transform: scale(1.4);
+            text-shadow: #00ff9d 0 0 10px, #00b8ff 0 0 20px;
+        }
         
         /* Custom Scrollbar Styles */
         /* Webkit browsers */
