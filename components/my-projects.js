@@ -11,29 +11,29 @@ class MyProjects extends HTMLElement {
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project 1: CameraGameSetup -->
+          <!-- Project 1: Scouts Blauberg Sponsor Management -->
           <div class="project-card">
             <div class="project-inner card h-full rounded-xl overflow-hidden">
               <div class="relative">
-                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=1770&q=80"
-                    alt="Camera Game Simulation"
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1770&q=80"
+                    alt="Scouts Blauberg Sponsor Management"
                     class="w-full h-48 object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-4 left-4">
-                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Three.js</span>
-                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Custom Engine</span>
+                  <span class="text-xs px-2 py-1 bg-primary rounded text-white">Sponsor Management</span>
+                  <span class="text-xs px-2 py-1 bg-secondary rounded ml-2 text-white">Scouts Blauberg</span>
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Camera Game Simulation</h3>
+                <h3 class="text-xl font-bold mb-2">Scouts Blauberg Sponsor Management</h3>
                 <p class="text-gray-400 text-sm mb-4">
-                  A 3D simulation for exploring city-building mechanics, camera controls, and resource management using WebGL and custom shaders.
+                  A web application for <span class="font-semibold text-primary">Scouts Blauberg</span> to manage sponsors for the annual <span class="font-semibold">Kermisuif</span> event. Users can be assigned to specific sponsors, track progress, and ensure all sponsors are managed and completed efficiently for a smooth event organization.
                 </p>
                 <div class="flex space-x-3">
-                  <a href="#" class="text-primary hover:text-secondary">
+                  <a href="https://vicment.github.io/KermisFuif_Frontend/" class="text-primary hover:text-secondary" target="_blank">
                     <i class="fas fa-external-link-alt"></i>
                   </a>
-                  <a href="#" class="text-primary hover:text-secondary">
+                  <a href="https://github.com/VicMent/KermisFuif_Frontend" class="text-primary hover:text-secondary" target="_blank">
                     <i class="fab fa-github"></i>
                   </a>
                 </div>
@@ -50,8 +50,8 @@ class MyProjects extends HTMLElement {
                     class="w-full h-48 object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-4 left-4">
-                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Web Game</span>
-                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Workshops</span>
+                  <span class="text-xs px-2 py-1 bg-primary rounded text-white">Web Game</span>
+                  <span class="text-xs px-2 py-1 bg-secondary rounded ml-2 text-white">Workshops</span>
                 </div>
               </div>
               <div class="p-6">
@@ -77,8 +77,8 @@ class MyProjects extends HTMLElement {
                     class="w-full h-48 object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 <div class="absolute bottom-4 left-4">
-                  <span class="text-xs px-2 py-1 bg-primary text-black rounded">Full Stack</span>
-                  <span class="text-xs px-2 py-1 bg-secondary text-black rounded ml-2">Education Game</span>
+                  <span class="text-xs px-2 py-1 bg-primary rounded text-white">Full Stack</span>
+                  <span class="text-xs px-2 py-1 bg-secondary rounded ml-2 text-white">Education Game</span>
                 </div>
               </div>
               <div class="p-6">
