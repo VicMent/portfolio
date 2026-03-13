@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vic Menten</title>
+
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("portfolio-theme");
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/scroll-fx.css" />
+</head>
+<body>
+
+  <header class="terminal-nav">
+    <div class="terminal-nav-left">
+      <span class="terminal-nav-indicator">vic@portfolio</span>
+      <span class="terminal-nav-path">~/site</span>
+    </div>
+    <nav class="terminal-nav-right">
+      <button class="terminal-nav-link is-active" data-target="#top">[H]OME</button>
+      <button class="terminal-nav-link" data-target="#portfolio">[P]ROJECTS</button>
+      <button class="terminal-nav-link" data-target="#skills">[S]KILLS</button>
+      <button class="terminal-nav-link" data-target="#contact">[C]ONTACT</button>
+      <span class="terminal-nav-sep" aria-hidden="true">|</span>
+      <div class="theme-switcher theme-switcher--nav" role="group" aria-label="Site theme presets">
+        <span class="theme-switcher-label">THEME:</span>
+        <button class="theme-preset is-active" type="button" data-theme-preset="matrix" aria-pressed="true" aria-label="Use matrix theme">
+          <span class="theme-preset-dot theme-preset-dot--matrix" aria-hidden="true"></span>
+        </button>
+        <button class="theme-preset" type="button" data-theme-preset="ember" aria-pressed="false" aria-label="Use ember theme">
+          <span class="theme-preset-dot theme-preset-dot--ember" aria-hidden="true"></span>
+        </button>
+        <button class="theme-preset" type="button" data-theme-preset="glacier" aria-pressed="false" aria-label="Use glacier theme">
+          <span class="theme-preset-dot theme-preset-dot--glacier" aria-hidden="true"></span>
+        </button>
+      </div>
+      <span class="terminal-nav-sep" aria-hidden="true">|</span>
+      <button id="sfx-toggle" class="terminal-nav-link sfx-toggle" aria-label="Mute sound effects">[♪ ON]</button>
+    </nav>
+  </header>
+
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-title">LOADING PORTFOLIO</div>
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div id="loader-percent" class="loader-percent">0%</div>
+    </div>
+  </div>
+
+  <main id="top" class="hero">
+    <pre id="ascii-logo" class="ascii hero-ascii"></pre>
+    <p class="hero-subtitle">// VIC MENTEN :: MY PORTFOLIO</p>
+    <div class="hero-scroll-hint">
+      <span class="hero-arrow">▼</span>
+      <span class="hero-scroll-text">SCROLL</span>
+    </div>
+  </main>
+
+  <section id="portfolio" class="portfolio">
+    <header class="portfolio-header">
+      <p class="portfolio-label">SECTION_01 // PORTFOLIO</p>
+      <pre class="portfolio-ascii-title">[ ========== PROJECTS ========== ]</pre>
+    </header>
+
+    <div class="portfolio-grid">
+      <!-- Template: 3D bobbing picture frame with text beside it -->
+      <article class="project project-template-bob slot-in">
+        <div class="project-frame3d">
+          <div class="project-frame3d-border">
+            <div class="project-frame3d-surface">
+              <img class="project-frame3d-image" src="images/projects/roidrager.png" alt="Roid Rager project screenshot" />
+            </div>
+          </div>
+        </div>
+
+        <div class="project-copy">
+          <h2 class="project-title">// ROID RAGER</h2>
+          <div class="project-tags">
+            <span class="project-tag project-tag--engine">[▸ UE5]</span>
+            <span class="project-tag project-tag--genre">[▸ ROGUELIKE / FPS]</span>
+            <span class="project-tag project-tag--platform">[▸ PC]</span>
+          </div>
+          <p class="project-meta">2026 · SOLO DEV · DECKBUILDER / WAVE SURVIVAL / PHYSICS COMBAT</p>
+          <p class="project-description">
+            A first-person wave survival roguelike about turning yourself into an
+            overpowered tax-evading monster through steroids, cybernetics, drugs,
+            and surgery. Every run revolves around building a body-mod deck,
+            managing a BPM-based ability system, and smashing through enemies with
+            stretchy physics-driven fists in a filthy PS2-inspired city arena.
+          </p>
+        </div>
+
+        <div class="project-video-reveal" aria-label="Roid Rager gameplay video">
+          <div class="project-video-shell">
+            <p class="project-video-label">[ LIVE_FEED :: ROID_RAGER ]</p>
+            <div class="project-video-wrap">
+              <iframe
+                class="project-video-iframe"
+                src="https://www.youtube.com/embed/Cu67KxdKmhs?si=HGaW2ChpyfVhsLWO"
+                title="Roid Rager gameplay trailer"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-template-bob slot-in" style="--slot-delay: 0.12s">
+        <div class="project-frame3d">
+          <div class="project-frame3d-border">
+            <div class="project-frame3d-surface">
+              <div class="project-frame3d-placeholder">[ NEXT PROJECT // EMPTY SLOT ]</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-copy">
+          <h2 class="project-title">// NEXT PROJECT</h2>
+          <div class="project-tags">
+            <span class="project-tag project-tag--engine">[▸ ENGINE]</span>
+            <span class="project-tag project-tag--genre">[▸ GENRE]</span>
+            <span class="project-tag project-tag--platform">[▸ PLATFORM]</span>
+          </div>
+          <p class="project-meta">YEAR · ROLE · STACK</p>
+          <p class="project-description">
+            Empty project slot for future work. Drop in the title, tags, platform,
+            and short description when the next project is ready to be shown.
+          </p>
+        </div>
+
+        <div class="project-video-reveal" aria-label="Next project teaser video">
+          <div class="project-video-shell">
+            <p class="project-video-label">[ LIVE_FEED :: NEXT_PROJECT ]</p>
+            <div class="project-video-wrap">
+              <iframe
+                class="project-video-iframe"
+                src="https://www.youtube.com/embed/Cu67KxdKmhs?si=HGaW2ChpyfVhsLWO"
+                title="Next project teaser"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="journey" class="journey">
+    <header class="journey-header slot-in">
+      <p class="portfolio-label">SECTION_02 // JOURNEY ARCHIVE</p>
+      <pre class="portfolio-ascii-title">[ ====== SNAPSHOTS :: THE JOURNEY ====== ]</pre>
+    </header>
+
+    <section class="media-carousel-section slot-in" style="--slot-delay: 0.15s" aria-label="Journey screenshots carousel">
+        <div class="media-carousel-header">
+          <pre>// JOURNEY_ARCHIVE :: RANDOMIZED_STREAM
+// WHEEL / TRACKPAD SCROLL = BROWSE
+// AUTO-SHUFFLE ON EACH LOAD</pre>
+          <p class="media-carousel-status" id="media-carousel-status">[ INITIALIZING_MEDIA_STREAM ]</p>
+        </div>
+
+        <div class="media-carousel-shell" id="media-carousel" tabindex="0" aria-label="Scrollable 3D screenshot carousel">
+          <div class="media-carousel-viewport">
+            <div class="media-carousel-track" id="media-carousel-track"></div>
+          </div>
+          <div class="media-carousel-foot">
+            <span class="media-carousel-hint">SCROLL TO SPIN</span>
+            <span class="media-carousel-counter" id="media-carousel-counter">0 / 0</span>
+          </div>
+        </div>
+    </section>
+  </section>
+
+  <section id="skills" class="skills">
+    <header class="skills-header slot-in">
+      <p class="portfolio-label">SECTION_03 // SKILLS</p>
+      <pre class="portfolio-ascii-title">[ ===== INVENTORY :: SKILLS ===== ]</pre>
+    </header>
+
+    <div class="skills-grid">
+
+      <div class="skills-category slot-in">
+        <p class="skills-category-label">&gt; ENGINES_</p>
+        <div class="skills-list">
+          <div class="skills-entry slot-in" style="--slot-delay: 0s">
+            <span class="skills-name">&gt; Unity</span>
+            <span class="skills-bar"><span class="skills-bar-bg">░░░░░░░░░░</span><span class="skills-bar-fg" style="--w: 8ch">████████</span></span>
+            <span class="skills-level">LVL 8</span>
+          </div>
+          <div class="skills-entry slot-in" style="--slot-delay: 0.1s">
+            <span class="skills-name">&gt; Godot</span>
+            <span class="skills-bar"><span class="skills-bar-bg">░░░░░░░░░░</span><span class="skills-bar-fg" style="--w: 6ch">██████</span></span>
+            <span class="skills-level">LVL 6</span>
+          </div>
+          <div class="skills-entry slot-in" style="--slot-delay: 0.2s">
+            <span class="skills-name">&gt; Unreal</span>
+            <span class="skills-bar"><span class="skills-bar-bg">░░░░░░░░░░</span><span class="skills-bar-fg" style="--w: 4ch">████</span></span>
+            <span class="skills-level">LVL 4</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-category slot-in">
+        <p class="skills-category-label">&gt; LANGUAGES_</p>
+        <div class="skills-list">
+          <div class="skills-entry slot-in" style="--slot-delay: 0s">
+            <span class="skills-name">&gt; C#</span>
+            <span class="skills-bar"><span class="skills-bar-bg">░░░░░░░░░░</span><span class="skills-bar-fg" style="--w: 9ch">█████████</span></span>
+            <span class="skills-level">LVL 9</span>
+          </div>
+          <div class="skills-entry slot-in" style="--slot-delay: 0.1s">
+            <span class="skills-name">&gt; JavaScript</span>
+            <span class="skills-bar"><span class="skills-bar-bg">░░░░░░░░░░</span><span class="skills-bar-fg" style="--w: 8ch">████████</span></span>
+            <span class="skills-level">LVL 8</span>
+          </div>
+          <div class="skills-entry slot-in" style="--slot-delay: 0.2s">
+            <span class="skills-name">&gt; Python</span>
+            <span class="skills-bar"><span class="skills-bar-bg">░░░░░░░░░░</span><span class="skills-bar-fg" style="--w: 7ch">███████</span></span>
+            <span class="skills-level">LVL 7</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-category slot-in">
+        <p class="skills-category-label">&gt; WEB &amp; TOOLS_</p>
+        <div class="skills-list">
+          <div class="skills-entry slot-in" style="--slot-delay: 0s">
+            <span class="skills-name">&gt; HTML / CSS</span>
+            <span class="skills-bar"><span class="skills-bar-bg">░░░░░░░░░░</span><span class="skills-bar-fg" style="--w: 9ch">█████████</span></span>
+            <span class="skills-level">LVL 9</span>
+          </div>
+          <div class="skills-entry slot-in" style="--slot-delay: 0.1s">
+            <span class="skills-name">&gt; React</span>
+            <span class="skills-bar"><span class="skills-bar-bg">░░░░░░░░░░</span><span class="skills-bar-fg" style="--w: 6ch">██████</span></span>
+            <span class="skills-level">LVL 6</span>
+          </div>
+          <div class="skills-entry slot-in" style="--slot-delay: 0.2s">
+            <span class="skills-name">&gt; Three.js</span>
+            <span class="skills-bar"><span class="skills-bar-bg">░░░░░░░░░░</span><span class="skills-bar-fg" style="--w: 7ch">███████</span></span>
+            <span class="skills-level">LVL 7</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <header class="contact-header slot-in">
+      <p class="portfolio-label">SECTION_04 // CONTACT</p>
+      <pre class="portfolio-ascii-title">[ ====== CONTACT ====== ]</pre>
+    </header>
+
+    <div class="contact-grid">
+      <div class="contact-prompt slot-in">
+        <pre>// CONTACT :: PROMPT
+> echo "Let's work together" &gt; contact.txt
+> cat contact.txt
+
+Hi, I'm Vic. I build retro-inspired
+web experiences with a modern engine.
+        </pre>
+        <p class="contact-text">
+          Tell me about your project, idea, or collaboration. I love
+          interfaces that feel tactile, nostalgic, and just a little bit
+          strange in the best possible way.
+        </p>
+      </div>
+
+      <form class="contact-form slot-in" style="--slot-delay: 0.15s" action="#" method="post" onsubmit="event.preventDefault(); document.getElementById('contact-status').textContent='[OK] MESSAGE_QUEUED :: I\'ll get back to you.';">
+        <div class="contact-field">
+          <label class="contact-label" for="name">&gt; NAME</label>
+          <input class="contact-input" id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+
+        <div class="contact-field">
+          <label class="contact-label" for="email">&gt; EMAIL</label>
+          <input class="contact-input" id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="contact-field">
+          <label class="contact-label" for="message">&gt; MESSAGE</label>
+          <textarea class="contact-textarea" id="message" name="message" placeholder="What are you working on?" required></textarea>
+        </div>
+
+        <button class="contact-submit" type="submit">&gt; SEND</button>
+        <div id="contact-status" class="contact-status">[ ] READY_FOR_INPUT</div>
+      </form>
+    </div>
+  </section>
+  <div id="glyph-layer" class="glyph-layer"></div>
+  <div id="score-hud" class="score-hud">SCORE 000</div>
+  <div id="screen-buddy" class="screen-buddy" aria-label="Little helper" role="img">
+    <pre>
+ /\_/\
+( o.o )
+ > ^ <
+    </pre>
+  </div>
+
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <div id="custom-cursor" class="custom-cursor" aria-hidden="true">
+    <div class="cc-dot"></div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/ascii-animation.js"></script>
+  <script src="js/buddy.js"></script>
+  <script src="js/scroll-fx.js"></script>
+  <script src="js/media-carousel.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/theme-presets.js"></script>
+</body>
+</html>

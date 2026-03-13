@@ -1,0 +1,50 @@
+:root {
+  /* Colors */
+  --color-bg: #000000;
+  --color-primary: #00ff66;
+  --color-primary-soft: #00ff88;
+  --color-primary-alt: #00ffaa;
+  --color-primary-rgb: 0 255 102;
+  --color-primary-soft-rgb: 0 255 136;
+  --color-primary-alt-rgb: 0 255 170;
+
+  /* Typography */
+  --font-body: "Courier New", monospace;
+
+  /* ASCII */
+  --ascii-font-size-min: 4px;
+  --ascii-font-size-vw: 0.6vw;
+  --ascii-font-size-max: 10px;
+
+  /* Loader */
+  --loader-width: 420px;
+  --loader-bar-height: 10px;
+
+  /* Navigation */
+  --nav-height: 44px;
+
+  /* CRT Overlay */
+  --crt-scanline-size: 4px;
+  --crt-scanline-opacity: 0.10;
+  --crt-vignette-opacity: 0.62;
+  --crt-glare-opacity: 0.028;
+  --crt-flicker-opacity: 0.93;
+}
+
+:root[data-theme="ember"] {
+  --color-primary: #ffb000;
+  --color-primary-soft: #ffd36b;
+  --color-primary-alt: #ff7b39;
+  --color-primary-rgb: 255 176 0;
+  --color-primary-soft-rgb: 255 211 107;
+  --color-primary-alt-rgb: 255 123 57;
+}
+
+:root[data-theme="glacier"] {
+  --color-primary: #5de7ff;
+  --color-primary-soft: #a8f5ff;
+  --color-primary-alt: #4ea6ff;
+  --color-primary-rgb: 93 231 255;
+  --color-primary-soft-rgb: 168 245 255;
+  --color-primary-alt-rgb: 78 166 255;
+}
