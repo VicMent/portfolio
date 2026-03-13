@@ -34,7 +34,18 @@
       <span class="terminal-nav-indicator">vic@portfolio</span>
       <span class="terminal-nav-path">~/site</span>
     </div>
-    <nav class="terminal-nav-right">
+    <button
+      class="terminal-nav-toggle"
+      type="button"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="terminal-nav-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="terminal-nav-right" id="terminal-nav-menu">
       <button class="terminal-nav-link is-active" data-target="#top">[H]OME</button>
       <button class="terminal-nav-link" data-target="#portfolio">[P]ROJECTS</button>
       <button class="terminal-nav-link" data-target="#skills">[S]KILLS</button>

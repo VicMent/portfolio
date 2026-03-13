@@ -1,5 +1,21 @@
 (function () {
   const nav = document.querySelector(".terminal-nav");
+  const navMenu = document.getElementById("terminal-nav-menu");
+  const navToggle = document.querySelector(".terminal-nav-toggle");
+
+  function isMobileNav() {
+    return window.matchMedia("(max-width: 640px)").matches;
+  }
+
+  function setMenuOpen(isOpen) {
+    if (!nav || !navToggle) return;
+    nav.classList.toggle("is-open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    // Sync immediately and again after layout settles.
+    syncNavHeightVar();
+    requestAnimationFrame(syncNavHeightVar);
+    setTimeout(syncNavHeightVar, 0);
+  }
 
   function syncNavHeightVar() {
     if (!nav) return;
@@ -46,7 +62,31 @@
 
       window.scrollTo({ top: offsetTop, behavior: "smooth" });
       setActiveLink(target);
+
+      if (isMobileNav()) {
+        setMenuOpen(false);
+      }
     });
+  });
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.contains("is-open");
+      setMenuOpen(!isOpen);
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && nav && nav.classList.contains("is-open")) {
+      setMenuOpen(false);
+    }
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (!nav || !isMobileNav()) return;
+    if (!nav.classList.contains("is-open")) return;
+    if (nav.contains(event.target)) return;
+    setMenuOpen(false);
   });
 
   const observer = new IntersectionObserver(
@@ -68,7 +108,20 @@
 
   sections.forEach((s) => observer.observe(s.el));
 
+  if (nav && typeof ResizeObserver !== "undefined") {
+    const navResizeObserver = new ResizeObserver(() => {
+      syncNavHeightVar();
+    });
+    navResizeObserver.observe(nav);
+  }
+
   syncNavHeightVar();
-  window.addEventListener("resize", syncNavHeightVar, { passive: true });
-  window.addEventListener("orientationchange", syncNavHeightVar, { passive: true });
+  window.addEventListener("resize", () => {
+    if (!isMobileNav()) setMenuOpen(false);
+    syncNavHeightVar();
+  }, { passive: true });
+  window.addEventListener("orientationchange", () => {
+    if (!isMobileNav()) setMenuOpen(false);
+    syncNavHeightVar();
+  }, { passive: true });
 })();

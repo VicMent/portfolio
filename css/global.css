@@ -454,6 +454,34 @@ body::-webkit-scrollbar-thumb:hover {
   gap: 0.25rem;
 }
 
+.terminal-nav-toggle {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(var(--color-primary-rgb) / 0.4);
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-primary);
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.18rem;
+  cursor: pointer;
+}
+
+.terminal-nav-toggle span {
+  width: 0.85rem;
+  height: 1px;
+  background: currentColor;
+  box-shadow: 0 0 6px rgba(var(--color-primary-rgb) / 0.5);
+}
+
+.terminal-nav-toggle:hover,
+.terminal-nav-toggle:focus-visible {
+  background: rgba(var(--color-primary-rgb) / 0.12);
+  outline: none;
+}
+
 .terminal-nav-link {
   border: none;
   background: none;
@@ -1585,7 +1613,7 @@ body::-webkit-scrollbar-thumb:hover {
 
   .terminal-nav {
     height: auto;
-    min-height: var(--nav-height);
+    min-height: 44px;
     padding-top: 0.55rem;
     padding-bottom: 0.55rem;
     flex-wrap: wrap;
@@ -1607,20 +1635,44 @@ body::-webkit-scrollbar-thumb:hover {
   .terminal-nav {
     padding-left: 0.9rem;
     padding-right: 0.9rem;
+    align-items: center;
   }
 
-  .terminal-nav-left,
+  .terminal-nav-left {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .terminal-nav-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
   .terminal-nav-right {
+    display: none;
     width: 100%;
+    margin-top: 0.55rem;
+    padding-top: 0.45rem;
+    border-top: 1px solid rgba(var(--color-primary-rgb) / 0.18);
+  }
+
+  .terminal-nav.is-open .terminal-nav-right {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: visible;
+    white-space: normal;
+    gap: 0.28rem;
+    padding-bottom: 0.2rem;
   }
 
   .terminal-nav-right {
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    padding-bottom: 0.2rem;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+  }
+
+  .terminal-nav-right::-webkit-scrollbar {
+    display: none;
   }
 
   .theme-switcher-label {
@@ -1631,7 +1683,18 @@ body::-webkit-scrollbar-thumb:hover {
   .sfx-toggle {
     letter-spacing: 0.08rem;
     font-size: 0.67rem;
-    padding: 0.12rem 0.35rem;
+    padding: 0.32rem 0.35rem;
+    text-align: left;
+  }
+
+  .theme-switcher--nav {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 0.2rem;
+  }
+
+  .terminal-nav-sep {
+    display: none;
   }
 
   .terminal-nav-indicator,
