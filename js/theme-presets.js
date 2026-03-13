@@ -1,7 +1,7 @@
 (function () {
   const root = document.documentElement;
   const presetButtons = Array.from(document.querySelectorAll("[data-theme-preset]"));
-  const defaultTheme = "matrix";
+  const defaultTheme = "glacier";
   const validThemes = new Set(["matrix", "ember", "glacier"]);
 
   if (!presetButtons.length) return;
@@ -9,11 +9,7 @@
   function setActivePreset(themeName) {
     const resolvedTheme = validThemes.has(themeName) ? themeName : defaultTheme;
 
-    if (resolvedTheme === defaultTheme) {
-      delete root.dataset.theme;
-    } else {
-      root.dataset.theme = resolvedTheme;
-    }
+    root.dataset.theme = resolvedTheme;
 
     window.localStorage.setItem("portfolio-theme", resolvedTheme);
 

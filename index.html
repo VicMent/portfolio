@@ -8,9 +8,7 @@
   <script>
     (function () {
       var savedTheme = localStorage.getItem("portfolio-theme");
-      if (savedTheme) {
-        document.documentElement.dataset.theme = savedTheme;
-      }
+      document.documentElement.dataset.theme = savedTheme || "glacier";
     })();
   </script>
 
@@ -47,6 +45,7 @@
     </button>
     <nav class="terminal-nav-right" id="terminal-nav-menu">
       <button class="terminal-nav-link is-active" data-target="#top">[H]OME</button>
+      <button class="terminal-nav-link" data-target="#about">[A]BOUT</button>
       <button class="terminal-nav-link" data-target="#portfolio">[P]ROJECTS</button>
       <button class="terminal-nav-link" data-target="#skills">[S]KILLS</button>
       <button class="terminal-nav-link" data-target="#showcase">[M]ODEL</button>
@@ -54,13 +53,13 @@
       <span class="terminal-nav-sep" aria-hidden="true">|</span>
       <div class="theme-switcher theme-switcher--nav" role="group" aria-label="Site theme presets">
         <span class="theme-switcher-label">THEME:</span>
-        <button class="theme-preset is-active" type="button" data-theme-preset="matrix" aria-pressed="true" aria-label="Use matrix theme">
+        <button class="theme-preset" type="button" data-theme-preset="matrix" aria-pressed="false" aria-label="Use matrix theme">
           <span class="theme-preset-dot theme-preset-dot--matrix" aria-hidden="true"></span>
         </button>
         <button class="theme-preset" type="button" data-theme-preset="ember" aria-pressed="false" aria-label="Use ember theme">
           <span class="theme-preset-dot theme-preset-dot--ember" aria-hidden="true"></span>
         </button>
-        <button class="theme-preset" type="button" data-theme-preset="glacier" aria-pressed="false" aria-label="Use glacier theme">
+        <button class="theme-preset is-active" type="button" data-theme-preset="glacier" aria-pressed="true" aria-label="Use glacier theme">
           <span class="theme-preset-dot theme-preset-dot--glacier" aria-hidden="true"></span>
         </button>
       </div>
@@ -89,9 +88,70 @@
     </div>
   </main>
 
+  <section id="about" class="about">
+    <header class="about-header slot-in">
+      <p class="portfolio-label">SECTION_01 // ABOUT_ME</p>
+      <pre class="portfolio-ascii-title">[ ===== PROFILE_BOOT :: VIC_MENTEN ===== ]</pre>
+    </header>
+
+    <div class="about-grid">
+      <article class="about-panel slot-in" style="--slot-delay: 0.05s">
+        <p class="about-lead">
+          I am Vic Menten, an IT bachelor graduate from UCLL and currently a game
+          development student at Syntra.
+        </p>
+        <!-- I enjoy building practical software,
+          interactive experiences, and game systems that are clear, fun, and polished. -->
+        <ul class="about-facts" aria-label="Quick profile facts">
+          <li><span class="about-key">&gt; EDUCATION</span><span class="about-val">Bachelor in Applied Computer Science (UCLL)</span></li>
+          <li><span class="about-key">&gt; NOW_STUDYING</span><span class="about-val">Game Development at Syntra</span></li>
+          <li><span class="about-key">&gt; LOCATION</span><span class="about-val">Herselt, Flanders, Belgium</span></li>
+          <li><span class="about-key">&gt; LEADERSHIP</span><span class="about-val">Volunteer scouts leader with team and event experience</span></li>
+          <li><span class="about-key">&gt; OPEN_TO</span><span class="about-val">Game development opportunities</span></li>
+        </ul>
+        <div class="about-links">
+          <a
+            class="about-link-btn"
+            href="https://www.linkedin.com/in/vicmenten/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Vic Menten LinkedIn profile"
+          >
+            &gt; LINKEDIN_PROFILE
+          </a>
+        </div>
+      </article>
+
+      <aside class="about-portrait-card slot-in" style="--slot-delay: 0.12s" aria-label="Portrait slot">
+        <div class="about-portrait-frame">
+          <img
+            class="about-portrait-image"
+            src="images/aboutme/vic.webp"
+            alt="Portrait of Vic Menten"
+            loading="lazy"
+          />
+        </div>
+      </aside>
+
+      <section class="about-decoder slot-in" style="--slot-delay: 0.18s" aria-label="Mini game: trait decoder">
+        <div class="about-decoder-head">
+          <p class="about-decoder-title">// MINI_GAME :: TRAIT_DECODER</p>
+          <p id="about-decoder-status" class="about-decoder-status">[ 0 / 4 TRAITS_DECODED ]</p>
+        </div>
+        <div class="about-decoder-chips" role="group" aria-label="Decode profile traits">
+          <button class="about-decoder-chip" type="button" data-reveal="UCLL applied CS graduate">[ 0x1A ]</button>
+          <button class="about-decoder-chip" type="button" data-reveal="Game dev student at Syntra">[ 0x2F ]</button>
+          <button class="about-decoder-chip" type="button" data-reveal="Volunteer scouts leader">[ 0x33 ]</button>
+          <button class="about-decoder-chip" type="button" data-reveal="Open to game dev roles">[ 0x7C ]</button>
+        </div>
+        <button id="about-decoder-reset" class="about-decoder-reset" type="button">&gt; RESET_DECODER</button>
+      </section>
+    </div>
+  </section>
+
   <section id="portfolio" class="portfolio">
     <header class="portfolio-header">
-      <p class="portfolio-label">SECTION_01 // PORTFOLIO</p>
+      <p class="portfolio-label">SECTION_02 // PORTFOLIO</p>
       <pre class="portfolio-ascii-title">[ ========== PROJECTS ========== ]</pre>
     </header>
 
@@ -186,7 +246,7 @@
 
   <section id="journey" class="journey">
     <header class="journey-header slot-in">
-      <p class="portfolio-label">SECTION_02 // JOURNEY ARCHIVE</p>
+      <p class="portfolio-label">SECTION_03 // JOURNEY ARCHIVE</p>
       <pre class="portfolio-ascii-title">[ ====== SNAPSHOTS :: THE JOURNEY ====== ]</pre>
     </header>
 
@@ -212,7 +272,7 @@
 
   <section id="skills" class="skills">
     <header class="skills-header slot-in">
-      <p class="portfolio-label">SECTION_03 // SKILLS</p>
+      <p class="portfolio-label">SECTION_04 // SKILLS</p>
       <pre class="portfolio-ascii-title">[ ===== INVENTORY :: SKILLS ===== ]</pre>
     </header>
 
@@ -287,7 +347,7 @@
   <!-- ===== 3D MODEL SHOWCASE ===== -->
   <section id="showcase" class="showcase">
     <header class="showcase-header slot-in">
-      <p class="portfolio-label">SECTION_04 // 3D SHOWCASE</p>
+      <p class="portfolio-label">SECTION_05 // 3D SHOWCASE</p>
       <pre class="portfolio-ascii-title">[ ======= 3D_MODEL_VIEWER ======= ]</pre>
     </header>
 
@@ -303,20 +363,27 @@
         </div>
         <div class="showcase-controls-bar">
           <span class="showcase-hint">DRAG TO ORBIT &nbsp;·&nbsp; SCROLL TO ZOOM</span>
-          <div class="showcase-mode-group" role="group" aria-label="Render mode">
+          <div class="showcase-mode-group" role="group" aria-label="Render mode and lighting">
             <button class="showcase-mode-btn" data-mode="wireframe" type="button">WIREFRAME</button>
             <button class="showcase-mode-btn is-active" data-mode="textured" type="button" disabled>TEXTURED</button>
+            <button id="showcase-lighting-btn" class="showcase-lighting-btn" type="button" hidden>LIGHTING :: STUDIO</button>
           </div>
         </div>
+        <div class="showcase-model-bar">
+          <span class="showcase-model-bar-label">SELECTED ASSET:</span>
+          <span id="showcase-selected-asset" class="showcase-model-bar-value">[ LOADING ]</span>
+        </div>
+        <!-- Model slider — shown when 2+ showcase models are configured -->
+        <div id="showcase-model-slider" class="showcase-model-slider" style="display:none"></div>
         <!-- Texture slider — hidden until textures are added -->
         <div id="showcase-texture-slider" class="showcase-texture-slider" style="display:none"></div>
       </div>
 
       <!-- Info panel -->
       <div class="showcase-info slot-in" style="--slot-delay: 0.12s">
-        <p class="showcase-info-label">&gt; MODEL_ID :: OrkTEST_low.fbx</p>
+        <p id="showcase-model-id" class="showcase-info-label">&gt; MODEL_ID :: [ LOADING ]</p>
 
-        <p class="showcase-info-desc">
+        <p id="showcase-model-desc" class="showcase-info-desc">
           Low-poly character model created for a personal project.
           Modelled entirely from scratch — built with game-ready topology
           in mind. Displayed here as an interactive wireframe viewer.
@@ -346,8 +413,7 @@
         </div>
 
         <p class="showcase-info-note">
-          // TEXTURED mode unlocks when texture maps are added.<br />
-          // See js/model-showcase.js &rarr; SHOWCASE_TEXTURES.
+          * The result is better experienced in a game engine with proper shaders
         </p>
       </div>
 
@@ -356,7 +422,7 @@
 
   <section id="contact" class="contact">
     <header class="contact-header slot-in">
-      <p class="portfolio-label">SECTION_05 // CONTACT</p>
+      <p class="portfolio-label">SECTION_06 // CONTACT</p>
       <pre class="portfolio-ascii-title">[ ====== CONTACT ====== ]</pre>
     </header>
 
@@ -391,7 +457,28 @@
     </div>
   </section>
   <div id="glyph-layer" class="glyph-layer"></div>
-  <div id="score-hud" class="score-hud">SCORE 000</div>
+  <div id="score-hud" class="score-hud">
+    <span id="score-hud-value" class="score-hud-value">SCORE 000</span>
+    <span class="score-hud-goal">GOAL: 10</span>
+  </div>
+  <div id="victory-overlay" class="victory-overlay" hidden>
+    <div class="victory-card" role="dialog" aria-modal="true" aria-labelledby="victory-title">
+      <p class="victory-kicker">[ SCORE_THRESHOLD_REACHED ]</p>
+      <h2 id="victory-title" class="victory-title">PRIZE UNLOCKED: CAT.JPG</h2>
+      <p class="victory-copy">You collected 10 glyphs. Reward granted: one elite cat photograph.</p>
+      <div class="victory-image-shell">
+        <div class="victory-image-stage">
+          <div class="victory-image-frame">
+            <span class="victory-image-badge">RARE DROP // FELINE CLASSIFIED</span>
+            <img class="victory-image" src="images/aboutme/cat.jpg" alt="Victory reward cat image" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <div class="victory-actions">
+        <button id="victory-close" class="victory-btn" type="button">&gt; CLOSE_REWARD</button>
+      </div>
+    </div>
+  </div>
   <div id="screen-buddy" class="screen-buddy" aria-label="Little helper" role="img">
     <pre>
  /\_/\
@@ -412,6 +499,7 @@
   <script src="js/navigation.js"></script>
   <script src="js/ascii-animation.js"></script>
   <script src="js/buddy.js"></script>
+  <script src="js/about-mini-game.js"></script>
   <script src="js/scroll-fx.js"></script>
   <script src="js/media-carousel.js"></script>
   <script src="js/sfx.js"></script>

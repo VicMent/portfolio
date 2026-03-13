@@ -10,6 +10,9 @@
 
   const glyphLayer = document.getElementById("glyph-layer");
   const scoreHud = document.getElementById("score-hud");
+  const scoreHudValue = document.getElementById("score-hud-value");
+  const victoryOverlay = document.getElementById("victory-overlay");
+  const victoryClose = document.getElementById("victory-close");
 
   const glyphChars = ["*", "+", "#", "%", "$", "@"];
   const glyphs = [];
@@ -19,7 +22,11 @@
   const GLYPH_FLOAT_AMPLITUDE = 10;
   const GLYPH_FLOAT_SPEED = 1;
   const GLYPH_GRAVITY = 1400; // px/s^2
+  const VICTORY_SCORE = 10;
   let score = 0;
+  let victoryShown = false;
+  let lastPointerX = window.innerWidth / 2;
+  let lastPointerY = window.innerHeight / 2;
 
   const sprites = {
     idle: " /\\_/\\\n( -.- )\n > ^ <",
@@ -55,15 +62,74 @@
   let lastDragY = 0;
   let lastDragTime = 0;
   let isOnGround = true;
+  let scrollJoltActive = false;
+  let scrollJoltTimer = null;
+  let lastBounceSfxAt = 0;
 
-  function updateScore(delta) {
+  const SCROLL_JOLT_RESET_MS = 180;
+  const BOUNCE_SFX_COOLDOWN_MS = 220;
+  const BOUNCE_SFX_MIN_IMPACT = 180;
+
+  function showVictoryOverlay() {
+    if (!victoryOverlay || victoryShown) return;
+    victoryShown = true;
+    victoryOverlay.hidden = false;
+    document.body.style.overflow = "hidden";
+    if (window.SFX) window.SFX.play("boot");
+  }
+
+  function hideVictoryOverlay() {
+    if (!victoryOverlay) return;
+    victoryOverlay.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  function spawnScorePopup(amount, popupPosition) {
+    if (!amount) return;
+
+    var popupX = popupPosition && typeof popupPosition.x === "number"
+      ? popupPosition.x
+      : lastPointerX;
+    var popupY = popupPosition && typeof popupPosition.y === "number"
+      ? popupPosition.y
+      : lastPointerY;
+
+    const popup = document.createElement("div");
+    popup.className = "score-popup";
+    popup.textContent = `+${amount}`;
+    popup.style.left = `${popupX}px`;
+    popup.style.top = `${popupY - 16}px`;
+    document.body.appendChild(popup);
+
+    popup.addEventListener("animationend", () => {
+      popup.remove();
+    }, { once: true });
+  }
+
+  function updateScore(delta, popupPosition) {
     score += delta;
     if (score < 0) score = 0;
-    if (scoreHud) {
+    if (delta > 0) {
+      spawnScorePopup(delta, popupPosition);
+    }
+    if (scoreHudValue) {
+      const padded = String(score).padStart(3, "0");
+      scoreHudValue.textContent = `SCORE ${padded}`;
+    } else if (scoreHud) {
       const padded = String(score).padStart(3, "0");
       scoreHud.textContent = `SCORE ${padded}`;
     }
+    if (score >= VICTORY_SCORE) {
+      showVictoryOverlay();
+    }
   }
+
+  window.PortfolioScore = {
+    add: updateScore,
+    get: function () {
+      return score;
+    },
+  };
 
   function getFloorY() {
     return window.innerHeight - floorOffset;
@@ -140,8 +206,15 @@
       if (y >= floorY) {
         y = floorY;
         if (vy > 0) {
+          const impactSpeed = vy;
           vy *= -bounceFactor; // bounce
-          if (window.SFX) window.SFX.play('bounce');
+          if (window.SFX && impactSpeed >= BOUNCE_SFX_MIN_IMPACT) {
+            const now = performance.now();
+            if (now - lastBounceSfxAt >= BOUNCE_SFX_COOLDOWN_MS) {
+              window.SFX.play('bounce');
+              lastBounceSfxAt = now;
+            }
+          }
         }
         if (Math.abs(vy) < 40) {
           vy = 0;
@@ -270,11 +343,42 @@
   buddy.addEventListener("pointerup", endDrag);
   buddy.addEventListener("pointercancel", endDrag);
 
+  document.addEventListener("pointermove", (event) => {
+    lastPointerX = event.clientX;
+    lastPointerY = event.clientY;
+  }, { passive: true });
+
+  if (victoryClose) {
+    victoryClose.addEventListener("click", hideVictoryOverlay);
+  }
+
+  if (victoryOverlay) {
+    victoryOverlay.addEventListener("click", (event) => {
+      if (event.target === victoryOverlay) hideVictoryOverlay();
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && victoryOverlay && !victoryOverlay.hidden) {
+      hideVictoryOverlay();
+    }
+  });
+
   // When scrolling, knock the buddy off any ledge so gravity pulls it down again
   window.addEventListener("scroll", () => {
-    // Any scroll gives a little jolt so he reacts
-    isOnGround = false;
-    vy += gravity * 0.03;
+    // Treat rapid wheel/touchpad movement as one gesture to avoid SFX spam.
+    if (!scrollJoltActive) {
+      scrollJoltActive = true;
+      if (isOnGround) {
+        isOnGround = false;
+        vy = Math.max(vy, gravity * 0.03);
+      }
+    }
+
+    clearTimeout(scrollJoltTimer);
+    scrollJoltTimer = setTimeout(() => {
+      scrollJoltActive = false;
+    }, SCROLL_JOLT_RESET_MS);
   });
 
   window.addEventListener("resize", () => {
