@@ -56,8 +56,14 @@
   var slides = [];
   var index = 0;
   var autoTimer = null;
-  var wheelDelta = 0;
   var total = files.length;
+  var isDragging = false;
+  var dragPointerId = null;
+  var dragLastX = 0;
+  var dragLastY = 0;
+  var dragAccumX = 0;
+  var dragAccumY = 0;
+  var DRAG_STEP_PX = 44;
 
   files.forEach(function (fileName, i) {
     var figure = document.createElement('figure');
@@ -177,16 +183,57 @@
     }, 2800);
   }
 
-  root.addEventListener('wheel', function (event) {
+  root.addEventListener('dragstart', function (event) {
     event.preventDefault();
-    wheelDelta += event.deltaY;
+  });
 
-    if (Math.abs(wheelDelta) >= 55) {
-      step(wheelDelta > 0 ? 1 : -1);
-      wheelDelta = 0;
-      startAuto();
+  root.addEventListener('pointerdown', function (event) {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+
+    isDragging = true;
+    dragPointerId = event.pointerId;
+    dragLastX = event.clientX;
+    dragLastY = event.clientY;
+    dragAccumX = 0;
+    dragAccumY = 0;
+
+    root.classList.add('is-dragging');
+    root.setPointerCapture(event.pointerId);
+    pauseAuto();
+  });
+
+  root.addEventListener('pointermove', function (event) {
+    if (!isDragging || event.pointerId !== dragPointerId) return;
+
+    var dx = event.clientX - dragLastX;
+    var dy = event.clientY - dragLastY;
+    dragLastX = event.clientX;
+    dragLastY = event.clientY;
+
+    dragAccumX += dx;
+    dragAccumY += dy;
+
+    // Advance when horizontal drag crosses threshold.
+    if (Math.abs(dragAccumX) >= DRAG_STEP_PX && Math.abs(dragAccumX) > Math.abs(dragAccumY) * 0.6) {
+      step(dragAccumX < 0 ? 1 : -1);
+      dragAccumX = 0;
+      dragAccumY = 0;
     }
-  }, { passive: false });
+  });
+
+  function endDrag(event) {
+    if (!isDragging || event.pointerId !== dragPointerId) return;
+
+    isDragging = false;
+    dragPointerId = null;
+    dragAccumX = 0;
+    dragAccumY = 0;
+    root.classList.remove('is-dragging');
+    startAuto();
+  }
+
+  root.addEventListener('pointerup', endDrag);
+  root.addEventListener('pointercancel', endDrag);
 
   root.addEventListener('keydown', function (event) {
     if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
@@ -203,6 +250,7 @@
 
   root.addEventListener('mouseenter', pauseAuto);
   root.addEventListener('mouseleave', startAuto);
+
   window.addEventListener('resize', layout);
 
   layout();

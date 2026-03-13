@@ -4,6 +4,12 @@
   var cursor = document.getElementById('custom-cursor');
   if (!cursor) return;
 
+  // Mobile/touch devices should keep the native cursor behavior.
+  if (window.matchMedia('(pointer: coarse)').matches) {
+    cursor.style.display = 'none';
+    return;
+  }
+
   // ── Position state ────────────────────────────────────────────────────────
   var tx = -200, ty = -200;   // mouse target
   var cx = -200, cy = -200;   // current (lerped)
